@@ -24,6 +24,11 @@ get '/resources' do
   erb :resources
 end
 
+get '/eats' do
+  @posts = EatPost.all
+  erb :eats
+end
+
 get '/for_sale' do
   erb :for_sale
 end
@@ -69,7 +74,18 @@ post '/create_resource_post' do
     author: params[:author],
     url: params[:url],
     text: params[:text])
-    erb :index
+    erb :resources
+end
+
+get '/create_eats_post' do
+  erb :eats_post_create
+end
+
+post '/create_eats_post' do
+  @post = EatsPost.create(name: params[:name],
+    address: params[:address],
+    text: params[:text])
+    erb :eats
 end
 
 get '/post/:id' do

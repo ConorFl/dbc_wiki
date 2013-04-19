@@ -1,3 +1,9 @@
 <div class="container">
   <h1>Eats</h1>
+  <h3><a href="/create_eats_post">Create Post</a></h3>
+  <% unless EatsPost.all.empty? %>
+    <% EatsPost.all.each do |post| %>
+      <a href='post/<%=post.id%>'><%= post.name %></a>
+    <% end %>
+  <% end %>
 </div>

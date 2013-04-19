@@ -7,6 +7,9 @@ class CreateTables < ActiveRecord::Migration
     create_table :resource_posts do |post|
       post.string :title, :author, :url, :text
     end
+    create_table :eats_posts do |post|
+      post.string :name, :address, :text
+    end
     create_table :comments do |comment|
       comment.string :text
     end
