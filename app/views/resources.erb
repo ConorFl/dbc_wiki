@@ -1,0 +1,9 @@
+<div class="container">
+  <h1>Resources</h1>
+  <h3><a href="/create_resource_post">Create Post</a></h3>
+  <% unless ResourcePost.all.empty? %>
+  <% @posts.each do |post| %>
+    <a href='post/<%=post.id%>'><%= post.title %></a>
+  <% end %>
+  <% end %>
+</div>
